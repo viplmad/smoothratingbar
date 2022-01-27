@@ -9,7 +9,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var rating = 3.0;
+  double rating = 3.0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,9 +31,8 @@ class _MyAppState extends State<MyApp> {
           starCount: 5,
           allowHalfRating: true,
           spacing: 2.0,
-          onRated: (value) {
-            print("rating value -> $value");
-            // print("rating value dd -> ${value.truncate()}");
+          onRated: (double value) {
+            // print('rating value -> $value');
           },
         )),
       ),

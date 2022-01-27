@@ -7,7 +7,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 
-typedef void RatingChangeCallback(double rating);
+typedef RatingChangeCallback = void Function(double rating);
 
 class SmoothStarRating extends StatefulWidget {
   final int starCount;
@@ -23,7 +23,8 @@ class SmoothStarRating extends StatefulWidget {
   defaultIconData; //this is needed only when having fullRatedIconData && halfRatedIconData
   final double spacing;
   final bool isReadOnly;
-  SmoothStarRating({
+  const SmoothStarRating({
+    Key? key,
     this.starCount = 5,
     this.isReadOnly = false,
     this.spacing = 0.0,
@@ -36,7 +37,7 @@ class SmoothStarRating extends StatefulWidget {
     this.filledIconData = Icons.star,
     this.halfFilledIconData = Icons.star_half,
     this.allowHalfRating = true,
-  });
+  }) : super(key: key);
   @override
   _SmoothStarRatingState createState() => _SmoothStarRatingState();
 }
@@ -78,7 +79,7 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
     Icon icon;
     if (index >= currentRating) {
       icon = Icon(
-        widget.defaultIconData != null ?  widget.defaultIconData : Icons.star_border,
+        widget.defaultIconData ?? Icons.star_border,
         color: widget.borderColor ?? Theme.of(context).primaryColor,
         size: widget.size,
       );
@@ -87,13 +88,13 @@ class _SmoothStarRatingState extends State<SmoothStarRating> {
             (widget.allowHalfRating ? halfStarThreshold : 1.0) &&
         index < currentRating) {
       icon = Icon(
-        widget.halfFilledIconData != null ?  widget.halfFilledIconData : Icons.star_half,
+        widget.halfFilledIconData ?? Icons.star_half,
         color: widget.color ?? Theme.of(context).primaryColor,
         size: widget.size,
       );
     } else {
       icon = Icon(
-        widget.filledIconData != null ?  widget.filledIconData : Icons.star,
+        widget.filledIconData ?? Icons.star,
         color: widget.color ?? Theme.of(context).primaryColor,
         size: widget.size,
       );

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({
+    Key? key,
+  }) : super(key: key);
+
   @override
   _MyAppState createState() => _MyAppState();
 }

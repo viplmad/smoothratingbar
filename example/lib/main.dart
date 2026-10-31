@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:smooth_star_rating/smooth_star_rating.dart';
 
 void main() => runApp(MyApp());

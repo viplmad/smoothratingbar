@@ -4,11 +4,12 @@ version: 1.0.4+2
 homepage: https://github.com/thangmam/smoothratingbar.git
 
 environment:
-  sdk: ">=2.0.0-dev.68.0 <3.0.0"
+  sdk: ^3.13.5
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: any
 
 dev_dependencies:
   flutter_test:

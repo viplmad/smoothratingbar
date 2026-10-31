@@ -1,15 +1,15 @@
 name: smooth_star_rating
 description: A smooth rating bar that supports full and half rating with easy icon customizability
-version: 1.1.1
+version: 2.0.0
 homepage: https://github.com/thangmam/smoothratingbar.git
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=3.0.0"
+  sdk: ^3.13.5
 
 dependencies:
   flutter:
     sdk: flutter
+  material_ui: any
 
 dev_dependencies:
-  flutter_lints: ^2.0.1
+  flutter_lints: ^6.0.0
